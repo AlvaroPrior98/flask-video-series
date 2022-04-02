@@ -5,9 +5,9 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
         {% if current_user.is_authenticated %}
-        <h1>Hello {{current_user.email}}</h1>
+        <h1>Welcome back {{current_user.email}}</h1>
         {% else%}
-        <h1>Hello world!</h1>
+        <h1>Register or login please</h1>
         {% endif %}
     </div>
 </div>

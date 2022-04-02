@@ -14,6 +14,9 @@ from wtforms.validators import Length, Email
 from werkzeug.security import generate_password_hash, check_password_hash
 
 from dash_application import create_dash_application
+from dash_application import create_dash_application2
+from dash_application import create_dash_application3
+#<li><a href="{{ url_for('index') }}">Home</a></li>
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "THIS IS A SECRET, DON'T DO THIS!"
@@ -24,7 +27,8 @@ migrate = Migrate(app, db)
 login = LoginManager()
 login.init_app(app)
 create_dash_application(app)
-
+create_dash_application2(app)
+create_dash_application3(app)
 
 @login.user_loader
 def user_loader(user_id):
@@ -45,7 +49,7 @@ class LoginForm(FlaskForm):
 class RegisterForm(FlaskForm):
     email = StringField("email", validators=[Email()])
     password = PasswordField("password", validators=[Length(min=5)])
-    repeat_password = PasswordField("repated_password", validators=[Length(min=5)])
+    repeat_password = PasswordField("repeated_password", validators=[Length(min=5)])
 
 
 @app.route("/")
